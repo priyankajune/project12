@@ -213,6 +213,12 @@ void display_all()
 	system("CLS");
 	cout<<"\n\n\n\t\tDISPLAY ALL RECORD !!!\n\n";
 	fp.open("Shop.dat",ios::in|ios::binary);
+	// If the file is empty
+	if(fp.eof())
+	{
+	   cout<<"\n\n\n\tNO RECORDS TO SHOW!!!!!";
+	   getch();
+	}
 	while(fp.read((char*)&pr,sizeof(book)))
 	{
 		pr.show_book();
